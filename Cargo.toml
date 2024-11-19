@@ -1,0 +1,30 @@
+[package]
+name = "hello-world"
+version = "0.1.1"
+edition = "2021"
+
+[[bin]]
+name = "hello-world"
+test = true
+bench = false
+
+[features]
+# required for tests - see https://github.com/rust-lang/cargo/issues/2911
+default = ["loose_deserialization"]
+loose_deserialization = []
+browser = []
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.89"
+quickcheck = "1.0.3"
+rand = "0.8.5"
+
+[profile.release]
+lto = "fat"
+incremental = true
+
+[profile.dev]
+debug = 0
+strip = "debuginfo"
