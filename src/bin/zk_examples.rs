@@ -1,5 +1,7 @@
-use zk_examples::bits::ops_examples;
+use zk_examples::{arkworks, bits};
 
 fn main() {
-    ops_examples();
+    arkworks::ops_examples();
+
+    bits::ops_examples();
 }
