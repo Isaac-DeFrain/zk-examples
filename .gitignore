@@ -1,2 +1,8 @@
+# rust
 target/
+
+# nix
+result/
+
+# direnv
 .direnv/
