@@ -60,14 +60,14 @@
     in
       with pkgs; {
         packages = flake-utils.lib.flattenTree rec {
-          hello-world = rustPlatform.buildRustPackage rec {
+          zk-examples = rustPlatform.buildRustPackage rec {
             meta = with lib; {
               description = ''
-                Hello world!
+                zk examples
               '';
-            #   homepage = "https://github.com/Isaac-DeFrain/hello-world";
+            #   homepage = "https://github.com/Isaac-DeFrain/zk-examples";
             #   license = licenses.asl20;
-            #   mainProgram = "hello-world";
+            #   mainProgram = "zk-examples";
             #   platforms = platforms.all;
               maintainers = [];
             };
@@ -83,7 +83,6 @@
                 && (path != "Justfile")
                 && (path != "target")
                 && (path != "tests");
-                # && (path != "ops")
             };
 
             cargoLock = {lockFile = ./Cargo.lock;};
@@ -106,21 +105,21 @@
               cargo clippy --all-targets --all-features -- -D warnings
               cargo nextest run --release
             '';
-            preInstall = "mkdir -p $out/var/log/hello-world";
+            preInstall = "mkdir -p $out/var/log/zk-examples";
           };
 
-          default = hello-world;
+          default = zk-examples;
 
         #   dockerImage = pkgs.dockerTools.buildImage {
-        #     name = "hello-world";
+        #     name = "zk-examples";
         #     created = "now";
         #     tag = builtins.substring 0 8 (self.rev or "dev");
         #     copyToRoot = pkgs.buildEnv {
-        #       paths = with pkgs; [hello-world bash self];
-        #       name = "hello-world-root";
+        #       paths = with pkgs; [zk-examples bash self];
+        #       name = "zk-examples-root";
         #       pathsToLink = ["/bin" "/share"];
         #     };
-        #     config.Cmd = ["${pkgs.lib.getExe hello-world}"];
+        #     config.Cmd = ["${pkgs.lib.getExe zk-examples}"];
         #   };
         };
 

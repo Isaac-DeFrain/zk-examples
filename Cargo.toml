@@ -1,10 +1,10 @@
 [package]
-name = "hello-world"
+name = "zk-examples"
 version = "0.1.1"
 edition = "2021"
 
 [[bin]]
-name = "hello-world"
+name = "zk_examples"
 test = true
 bench = false
 

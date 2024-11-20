@@ -51,15 +51,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hello-world"
-version = "0.1.1"
-dependencies = [
- "anyhow",
- "quickcheck",
- "rand",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.161"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -216,4 +207,13 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "zk-examples"
+version = "0.1.1"
+dependencies = [
+ "anyhow",
+ "quickcheck",
+ "rand",
 ]

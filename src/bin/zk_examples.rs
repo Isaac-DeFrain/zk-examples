@@ -1,6 +1,6 @@
-use hello_world::shift::Shift;
 use quickcheck::{Arbitrary, Gen};
 use rand;
+use zk_examples::shift::Shift;
 
 fn main() {
     // shift (lsl/lsr)
