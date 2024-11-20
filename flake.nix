@@ -57,6 +57,7 @@
           nightlyToolchain.passthru.availableComponents.rustfmt
           rust
           shfmt
+          mdformat
         ]
         ++ buildDependencies;
 
